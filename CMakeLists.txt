@@ -1,10 +1,11 @@
-cmake_minimum_required(VERSION 3.5)
-project(calculator C)
-add_subdirectory(include)
-add_subdirectory(src)
-include_directories(include)
+cmake_minimum_required(VERSION 3.10)
+project(Atelier_CMAKE)
+
 enable_testing()
-add_test(t1 src/calculator add 2 3)
-add_test(t2 src/calculator sub 3 -2)
-add_test(t3 src/calculator mul 5 5)
-add_test(t4 src/calculator div 1 5)
+
+# Dossier include
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+# Ajout du sous-dossier src/
+add_subdirectory(src)
+
