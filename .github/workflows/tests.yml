@@ -4,36 +4,18 @@ on: push
 
 jobs:
 
-  Compilation:
+  Build_and_Test:
     runs-on: ubuntu-latest
     steps:
-      - name: Récupération du dépôt
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Compilation + Tests CTest
+      - name: Compilation + Tests CTest + Test manuel
         run: |
           mkdir build
           cd build
           cmake ..
           make
           make test
-
-
-  Test_Add:
-    runs-on: ubuntu-latest
-    needs: Compilation
-    steps:
-      - name: Récupération du dépôt
-        uses: actions/checkout@v3
-
-      - name: Compilation
-        run: |
-          mkdir build
-          cd build
-          cmake ..
-          make
-
-      - name: Test de la fonction add
-        run: |
-          ./build/calculator add 10 5
-
+          # Test manuel add
+          ./calculator add 10 5
