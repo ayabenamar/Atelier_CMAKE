@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     } else if (strcmp(op, "div") == 0) {
         int b = atoi(argv[3]);
         result = divide(a, b);
-    } else if (strcmp(op, "car") == 0) {       // ➜ nouveau cas
+    } else if (strcmp(op, "car") == 0) {
         result = car(a);
     } else {
         printf("Unknown operation\n");
